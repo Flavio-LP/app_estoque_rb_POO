@@ -1,13 +1,42 @@
+ def importacacao(produtos)
 
- ARQ_NAME= "../db/database.txt"
+    arq_name =  "./db/database.txt"
 
-arquivo = File.open(ARQ_NAME)
+    variables ||= { id: nil, nome: nil, preco: nil, descricao: nil, quantidade: nil }
+    
+    arquivo = File.open(arq_name)
 
-arquivo.readlines.each do |linha|
-    puts linha.chomp
-end
+    arquivo.readlines.each do |linha|
 
+        if linha.include? "BEGIN" or linha.include? "END" or linha.include? "--------"
+            if linha.include? "END"
+                break
+            end
+            next
+        end
 
-arquivo.close 
+        chave, valor = linha.strip.split(':').map(&:strip)
+        
+        case chave.downcase
+        when 'id'
+        variables[:id] = valor.to_i
+        when 'nome'
+        variables[:nome] = valor
+        when 'preco'
+        variables[:preco] = valor.to_f
+        when 'descricao'
+        variables[:descricao] = valor
+        when 'quantidade'
+        variables[:quantidade] = valor.to_i
+        end
 
-#    produtos << {id: Time.now.to_i, nome: nome, preco: preco, quantidade: quantidade} -- INSERE O PRODUTO EM UM OBJETO
+        if variables.values.all?
+            produtos << Produto.new(variables)
+            puts produtos
+            variables = { id: nil, nome: nil, preco: nil, descricao: nil, quantidade: nil }
+        end
+        
+        arquivo.close 
+    end
+
+ end

@@ -12,8 +12,8 @@ def menu(produtos)
     imprime("=",1,"yellow",false) || imprime(" 1 - Cadastrar produto ",1,"blue",false) || imprime("=",1,"yellow",true)
     imprime("=",1,"yellow",false) || imprime(" 2 - Listar produtos ",1,"blue",false) || imprime(" ",2,"yellow",false) || imprime("=",1,"yellow",true)
     imprime("=",1,"yellow",false) || imprime(" 3 - Retirar produto ",1,"blue",false) || imprime(" ",2,"yellow",false)|| imprime("=",1,"yellow",true)
-    imprime("=",1,"yellow",false) || imprime(" 4 - Sair ",1,"blue",false) || imprime(" ",13,"yellow",false)|| imprime("=",1,"yellow",true)
-    imprime("=",1,"yellow",false) || imprime(" 5 - Salvar ",1,"blue",false) || imprime(" ",13,"yellow",false)|| imprime("=",1,"yellow",true)
+    imprime("=",1,"yellow",false) || imprime(" 4 - Salvar ",1,"blue",false) || imprime(" ",11,"yellow",false)|| imprime("=",1,"yellow",true)
+    imprime("=",1,"yellow",false) || imprime(" 5 - Sair ",1,"blue",false) || imprime(" ",13,"yellow",false)|| imprime("=",1,"yellow",true)
     imprime("=",25,"yellow",true)
 
     opcao = gets.chomp.to_i
@@ -36,6 +36,8 @@ def menu(produtos)
           limpa_tela()
           retirar_produto(produtos)
         when 4
+          imprime("=",5,"yellow",false) || imprime(" Salvar produtos ",1,"blue",false) || imprime("=",5,"yellow",true)
+        when 5
           break
         else  
           puts "Opção inválida"

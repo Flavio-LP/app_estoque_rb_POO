@@ -1,23 +1,14 @@
 require_relative 'display/menu'
 require_relative 'display/style'
 require_relative 'model/produto'
+require_relative 'core/read_arquivo'
+require 'pry'
+# require_relative 'core/write_arquivo'
 
-produtos = [
-    {
-        id: 1,
-        nome: "Maça",
-        descricao: "Maça da turma da mônica",
-        preco: 2.5,
-        quantidade: 20
-    },
-    {
-        id: 2,
-        nome: "Banana",
-        descricao: "Nanica",
-        preco: "1.5",
-        quantidade: 30
-    }
-]
+produtos = []
+
+importacacao(produtos)
+
 
 menu(produtos)
 
