@@ -11,6 +11,11 @@ def cadastrar_produto(produtos)
 
     limpa_tela()
 
+    imprime("Digite uma descricação para o produto ( ",1,"blue",false) || imprime(nome,1,"green",false) || imprime(" ):",1,"blue",true)
+    descricao = gets.chomp
+
+    limpa_tela()
+
     imprime("Digite o preço do produto ( ",1,"blue",false) || imprime(nome,1,"green",false) || imprime(" ):",1,"blue",true)
     preco = gets.chomp.to_f
 
@@ -21,7 +26,13 @@ def cadastrar_produto(produtos)
 
     limpa_tela()
 
-    produtos << {id: Time.now.to_i, nome: nome, preco: preco, quantidade: quantidade}
+    produto = Produto.new({id: Time.now.to_i, 
+                            nome: nome, 
+                            descricao: descricao, 
+                            preco: preco,
+                            quantidade: quantidade})
+
+    produtos << produto                            
 
     imprime("Produto cadastrado com sucesso!",1,"green",true)
     sleep(2)
