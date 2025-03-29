@@ -33,9 +33,9 @@ def listar_produtos(produtos)
     imprime("-",10,"red",true)
     produtos.each do |produto|
       
-      imprime("Nome: ",1,"blue",false) || imprime(produto[:nome],1,"green",true)
-      imprime("Preço: ",1,"blue",false) || imprime(produto[:preco].to_s,1,"white",true)
-      imprime("Quantidade: ",1,"blue",false) || imprime(produto[:quantidade].to_s,1,"white",true)
+      imprime("Nome: ",1,"blue",false) || imprime(produto.nome,1,"green",true)
+      imprime("Preço: ",1,"blue",false) || imprime(produto.preco.to_s,1,"white",true)
+      imprime("Quantidade: ",1,"blue",false) || imprime(produto.quantidade.to_s,1,"white",true)
       imprime("-",10,"red",true)
     end  
     sleep(5)
