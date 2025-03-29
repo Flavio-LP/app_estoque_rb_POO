@@ -61,7 +61,7 @@ def retirar_produto(produtos)
     table = Terminal::Table.new do |t|
       t.headings = ['ID', 'Nome', 'Quantidade']
       produtos.each do |row|
-          t.add_row [row[:id], row[:nome], row[:quantidade]]
+          t.add_row [row.id, row.nome, row.quantidade]
       end
   end
 
@@ -71,7 +71,7 @@ def retirar_produto(produtos)
   imprime("Digite o ID do produto:", 1, "blue", false)
     id = gets.to_i
     
-    produto = produtos.find{|p| p[:id] == id}
+    produto = produtos.find{|p| p.id == id}
     limpa_tela()
     unless produto 
       imprime("Produto não encontrado", 1, "red", true)
@@ -90,8 +90,8 @@ def retirar_produto(produtos)
       return
     end
 
-    if produto[:quantidade] - quantidade >= 0
-      produto[:quantidade] -= quantidade
+    if produto.quantidade - quantidade >= 0
+      produto.quantidade -= quantidade
       imprime("Produto retirado com sucesso", 1, "green", true)
     else
       imprime("Quantidade indisponível", 1, "red", true)
