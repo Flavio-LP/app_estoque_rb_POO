@@ -1,6 +1,7 @@
 require 'colorize'
 require_relative 'style'
 require_relative '../core/controller'
+require_relative '../core/save_arquivo'
 
 
 def menu(produtos)
@@ -37,6 +38,9 @@ def menu(produtos)
           retirar_produto(produtos)
         when 4
           imprime("=",5,"yellow",false) || imprime(" Salvar produtos ",1,"blue",false) || imprime("=",5,"yellow",true)
+          sleep(2)
+          limpa_tela()
+          save_arquivo(produtos)
         when 5
           break
         else  

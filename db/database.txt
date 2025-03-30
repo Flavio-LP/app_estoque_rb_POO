@@ -1,15 +1,32 @@
-BEGIN
 --------
-id:1
-nome:Maça
-descricao:Maça da turma da mônica
-preco:2.5
-quantidade:20
+id: 1
+nome: Maça
+preco: 2.5
+descricao: Maça da turma da mônica
+quantidade: 20
 --------
-id:2
-nome:Banana
-descricao:Nanica
-preco:1.5
-quantidade:30
+id: 2
+nome: Banana
+preco: 1.5
+descricao: Nanica
+quantidade: 30
+--------
+id: 1743339620
+nome: carne
+preco: 15.0
+descricao: carne moída
+quantidade: 3
+--------
+id: 1743339657
+nome: pao
+preco: 15.0
+descricao: pao frances
+quantidade: 3
+--------
+id: 1743339745
+nome: alface
+preco: 8.0
+descricao: americana
+quantidade: 4
 --------
 END
