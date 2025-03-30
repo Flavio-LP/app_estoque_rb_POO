@@ -4,7 +4,7 @@ def save_arquivo(produtos)
     
     arquivo = File.readlines(arq_name)
 
-    linhas_filtradas = arquivo.reject { |linha| linha.strip == "END" }
+    arquivo.reject { |linha| linha.strip == "END" }
 
     File.open(arq_name, "w") do |file|
         file.puts "--------"
